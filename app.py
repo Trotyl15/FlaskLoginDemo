@@ -90,7 +90,7 @@ def register():
         return redirect(url_for('dashboard'))
     form = RegisterForm()
     if form.validate_on_submit():
-        hashed_password=bcrypt.generate_password_hash(form.password.data)
+        hashed_password=bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         new_user=User(username=form.username.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
@@ -102,4 +102,3 @@ def register():
 
 if __name__=='__main__':
     app.run(debug=True)
-
