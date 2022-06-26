@@ -6,3 +6,4 @@ Flask_WTF==1.0.1
 python_bcrypt==0.3.2
 WTForms==3.0.1
 gunicorn==20.1.0
+psycopg2==2.9.3
