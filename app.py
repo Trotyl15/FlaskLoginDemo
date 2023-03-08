@@ -1,3 +1,4 @@
+import os
 import bcrypt
 from flask import Flask, render_template, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -10,7 +11,7 @@ from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 bcrypt=Bcrypt(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://uumhfsvkncdmwp:4be3f78ebfba57c3edb171aa5a450aa0a755bd16e5f9da033ad3aedcd37e86a6@ec2-3-224-8-189.compute-1.amazonaws.com:5432/d74bnl03r8c2o4'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SECRET_KEY']='thisissecret'
 
 db=SQLAlchemy(app)
