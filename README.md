@@ -1,2 +1,2 @@
 # FlaskLoginDemo
-https://web-production-59a4.up.railway.app/
+https://flasklogindemo-production-59a4.up.railway.app/
